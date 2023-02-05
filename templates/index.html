@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Excel to Anki Converter</title>
+</head>
+<body>
+
+<form action="{{ url_for('convert') }}" method="post" enctype="multipart/form-data"
+      style="display: flex; flex-direction: column; align-items: center;">
+
+    <h1>Excel to Anki Flash Cards Converter</h1>
+
+    How To Use It:
+    <ul>
+        <li>Please upload an Excel (.XLS or .XLSX) file with original and translated phrases</li>
+        <li>The column for original phrase must be called <b>Source</b></li>
+        <li>The column for <i>optional</i> example of usage must be called <b>Example</b></li>
+        <li>The column(s) for translated phrase must be called <b>Target1</b>, <b>Target2</b>, ... <br>(you can have multiple translations, e.g. in multiple languages)</li>
+        <li><u>U</u>nderl<u>i</u>ning a character in the original phrase in Excel will add a stress sign in Anki</li>
+    </ul>
+
+    <label for="input_file" style="margin-bottom: 10px;">Your Excel File:</label>
+    <input type="file" id="input_file" name="input_file"
+         accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+         style="padding: 10px; margin-bottom: 20px;">
+
+    <input type="submit" value="Convert!" style="background-color: #4CAF50; color: white; padding: 10px 20px;">
+</form>
+</body>
+</html>

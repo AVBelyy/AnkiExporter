@@ -30,7 +30,7 @@ def convert():
         return f'Converter error: {e} ({type(e).__name__})'
     output_file.seek(0)
 
-    deck_filename = f'{secure_filename(deck_name)}.akpg'
+    deck_filename = f'{secure_filename(deck_name)}.apkg'
 
     return send_file(
         output_file,
